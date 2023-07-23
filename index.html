@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget App Using Javascript</title>
+    <!--Link style sheet-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="balance">
+        <span class="totalBal"> Total Balance </span>
+        <span class="totalBalVal"> $0.00.00 </span>
+        <div class="results">
+          <div>
+            <div class="resultType">
+              <ion-icon class="up" name="arrow-round-up"></ion-icon>
+              <span class="resultTitle"> Income </span>
+            </div>
+            <span class="incomeValue"> $0.00.00 </span>
+          </div>
+          <div>
+            <div class="resultType">
+              <ion-icon class="down" name="arrow-round-down"></ion-icon>
+              <span class="resultTitle"> Expense </span>
+            </div>
+            <span class="expenseValue"> $0.00.00 </span>
+          </div>
+        </div>
+      </div>
+      <progress class="progress" value="3333" max="10000"></progress>
+      <div class="addButtons">
+        <button onclick="showProductInterface()" class="addExpense">
+          Add Expense
+        </button>
+        <button onclick="showAmmountInterface()" class="addIncome">
+          Add Income
+        </button>
+      </div>
+      <div class="productInterface hide">
+        <span onclick="closeInterFace()" class="close"> &times </span>
+        <input type="text" class="productName" placeholder="Product Name" />
+        <input type="text" class="productType" placeholder="Product Type" />
+        <input type="number" class="productCost" placeholder="Product Cost" />
+        <button onclick="addProducts()" class="addProduct">Add Product</button>
+        <button onclick="updateTransactions()" class="updateProduct">
+          Update Product
+        </button>
+      </div>
+      <div class="ammountInterface hide">
+        <span onclick="closeInterFace()" class="close"> &times </span>
+        <input type="text" class="incomeSource" placeholder="Income Source" />
+        <input type="text" class="incomeType" placeholder="Income Type" />
+        <input
+          type="number"
+          class="incomeAmmount"
+          placeholder="Income Ammount"
+        />
+        <button onclick="addAmmounts()" class="addAmmount">Add Ammount</button>
+        <button onclick="updateTransactions()" class="updateAmmount">
+          Update Ammount
+        </button>
+      </div>
+      <div class="deleteInterface">
+        <ion-icon class="warningIcon" name="warning"></ion-icon>
+        <span class="warningHeading"> Confirm </span>
+        <div class="warningMessage"></div>
+        <div class="deleteActions">
+          <button onclick="deleteTrans()" class="deleteNow">Delete</button>
+          <button onclick="hideDelete()" class="cancelNow">Cancel</button>
+        </div>
+      </div>
+      <div class="transList">
+        <div class="trans">
+          <div class="item">
+            <div class="iconDetails">
+              <ion-icon class="transIcon" name="cash"></ion-icon>
+              <div class="itemDetails">
+                <span class="itemName"> Job </span>
+                <span class="itemType"> Primary Job </span>
+              </div>
+            </div>
+            <div class="itemDetails">
+              <span class="itemPrice"> $500.00 </span>
+              <span class="itemTime"> 10/30/2022 </span>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="edit">
+              <ion-icon class="actionIcon" name="create"></ion-icon>
+              <span class="editTitle"> Edit </span>
+            </button>
+            <button class="delete">
+              <ion-icon class="actionIcon" name="trash"></ion-icon>
+              <span class="deleteTitle"> Delete </span>
+            </button>
+          </div>
+        </div>
+        <div class="trans">
+          <div class="item">
+            <div class="iconDetails">
+              <ion-icon class="transIcon" name="cash"></ion-icon>
+              <div class="itemDetails">
+                <span class="itemName"> Part Time </span>
+                <span class="itemType"> Side Income </span>
+              </div>
+            </div>
+            <div class="itemDetails">
+              <span class="itemPrice"> $300.00 </span>
+              <span class="itemTime"> 11/30/2022 </span>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="edit">
+              <ion-icon class="actionIcon" name="create"></ion-icon>
+              <span class="editTitle"> Edit </span>
+            </button>
+            <button class="delete">
+              <ion-icon class="actionIcon" name="trash"></ion-icon>
+              <span class="deleteTitle"> Delete </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Pop up warning-->
+    <div class="snackBar">All Fields Are Required</div>
+    <!--Script for javascript-->
+    <script src="script.js"></script>
+    <!--Script for icons-->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  </body>
+</html>
